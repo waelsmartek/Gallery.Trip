@@ -1,0 +1,14 @@
+<h2>Travel Photos</h2>
+<div class="row">
+    <button type="button" class="btn btn-lg btn-info mr-2" active="filterBy=='all'"(click)="filterBy='all'">All</button>
+    <button type="button" class="btn btn-lg btn-info mr-2" active="filterBy=='georgia'"(click)="filterBy='georgia'">Georgia</button>
+    <button type="button" class="btn btn-lg btn-info mr-2" active="filterBy=='turkey'"(click)="filterBy='turkey'">Turkey</button>
+    <button type="button" class="btn btn-lg btn-info mr-2" active="filterBy=='lebanon'"(click)="filterBy='lebanon'">Lebanon</button>
+ <ul id="thumbnailsList">
+     <li *ngFor="let image of (visibleImages | imageFilter:filterBy)">
+        <a [routerLink] ="['/image', image.id]">
+           <img src="{{image.url}}" class="tn" width="200" height="160" >
+        </a>
+     </li>
+ </ul>
+</div>
